@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" type="image/png" href="public/image/sdark.png" />
+    <meta name=" description" content="موقع به ساعة ايقاف و مؤقت">
+
+    <title>ساعه ايقاف | المؤقت </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="public/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="public/slick-1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css" integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Harmattan|Tajawal" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="public/css/switcher.css">
+    <link rel="stylesheet" type="text/css" href="public/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="public/css/main89a0.css?v=1588986795">
+    <link rel="stylesheet" type="text/css" href="public/css/styles.css">
+
+
+
+
+</head>
+
+<body>
+
+    <!--first container-->
+
+    <div class="container" style="margin-top: 1%;">
+        <div class="row">
+
+            <div id="myTimer" class="col-6 col-sm-1 timer" style="margin-bottom: 1%;">
+                <img width="35px" height="35px" src="public/image/timer-clock.png">
+                <p>المؤقت</p>
+            </div>
+
+
+
+
+            <div id="myStop" class="col-6 col-sm-1  stop" style="margin-bottom: 1%;">
+                <img width="35px" height="35px" src="public/image/stopwatch.png">
+                <p>ساعة الايقاف</p>
+            </div>
+
+
+            <div class="col-12 col-sm-9 moodLang">
+
+                <button class="btn  border-0  " type="button" style="background: transparent;z-index:1">
+                    <a href="#" class="d-block"> 
+                       <span id="myLang" class="lang">
+                           الانجليزية
+                       </span>
+                   </a>
+           <span class="caret" style="color: rgb(237, 122, 125)"></span>
+       </button>
+                <span id="myMood" class="mood">
+                    الوضع الليلي
+                    <a><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" style="opacity: 0">
+                    </a>
+                </span>
+            </div>
+
+
+            <div id="logoText" class="col-12 col-sm-12 text-center logoText">
+
+                <a href="index.html">
+                    <img src="public/image/swhite.png" style="width: 90px;height: 90px;display: inline-block;" id="site-logo">
+                </a>
+                <br>
+                <h3 style="font-weight: bolder;">ساعة الايقاف</h3>
+                <h6>StopWatch</h6>
+
+            </div>
+        </div>
+    </div>
+    <!--second container-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+
+            <div id="stopwatchBox" class="col-12 col-md-6" style="margin-bottom: 10%;background-color: rgb(247, 252, 255);border-radius: 25px;">
+
+                <div class="timecount col-12 col-md-12" style="text-align: center;">
+                    <span id="second">ثانية</span>
+                    <span id="minute">دقيقة</span>
+                    <span id="hour">ساعة</span>
+
+                </div>
+
+                <div id="timespan" class="stopwatch col-12 col-md-12" style="text-align: center;">
+                    00:00:00
+                </div>
+
+                <div class="tools col-12 col-md-12" style="margin-top: 5%;text-align: center;">
+                    <a id="lap" class="lap" class="button" onclick="countdown()" style="border-radius: 30px;
+                    padding: 19px;color: rgb(216, 234, 239);border-radius: 45px;background-color: rgb(168, 208, 220);">بدء</a>
+                    <a id="repeat" class="repeat" class="button" onclick="cdreset()">إعادة</a>
+
+                </div>
+
+
+
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-12 col-md-4">
+
+                <div id="myResults" class="resultsTimer">
+                    <p id="resText" class="resText" style="border-radius: 10px;margin-right: 35%;border: 1px solid;
+                    box-shadow: 0 8px 6px -6px black;top: -5%;position: relative;">تعديل الوقت</p>
+
+                    <form id="frm" style="color: rgb(237, 122, 125);padding-top: 15%;">
+
+                        <p> ساعة </p>
+                        <div id="sliderHours" class="sliderHours" style="border-bottom: 1px solid;margin-top: 5%;">
+
+
+                            <div>
+                                <input type="text" name="hours" value="00" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="01" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="02" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="03" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="04" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="05" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="06" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="07" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="08" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="09" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="10" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="11" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="12" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="13" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="14" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="15" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="16" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="17" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="18" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="19" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="20" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="21" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="22" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="23" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="hours" value="24" size="2" maxlength="2" disabled />
+                            </div>
+
+
+                        </div>
+                        <div id="selectHrs">|</div> <br/>
+
+                        <p> دقيقة </p>
+                        <div id="sliderMins" class="sliderMins" style="border-bottom: 1px solid;margin-top: 1%;text-align: center;">
+
+                            <div>
+                                <input type="text" name="mins" value="00" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="01" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="02" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="03" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="04" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="05" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="06" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="07" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="08" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="09" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="10" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="11" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="12" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="13" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="14" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="15" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="16" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="17" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="18" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="19" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="20" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="21" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="22" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="23" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="24" size="2" maxlength="2" disabled />
+                            </div>
+
+                            <div>
+                                <input type="text" name="mins" value="25" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="26" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="27" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="28" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="29" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="30" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="31" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="32" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="33" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="34" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="35" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="36" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="37" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="38" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="39" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="40" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="41" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="42" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="43" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="44" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="45" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="46" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="47" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="48" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="49" size="2" maxlength="2" disabled />
+                            </div>
+
+                            <div>
+                                <input type="text" name="mins" value="50" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="51" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="52" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="53" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="54" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="55" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="56" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="57" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="58" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="59" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="mins" value="60" size="2" maxlength="2" disabled />
+                            </div>
+
+
+
+                        </div>
+                        <div id="selectMins">|</div> <br/>
+
+                        <p> ثانية </p>
+                        <div id="sliderSec" class="sliderSec" style="border-bottom: 1px solid;margin-top: 0px;text-align: center;">
+                            <div>
+                                <input type="text" name="seconds" value="00" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="01" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="02" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="03" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="04" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="05" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="06" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="07" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="08" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="09" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="10" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="11" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="12" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="13" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="14" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="15" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="16" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="17" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="18" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="19" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="20" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="21" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="22" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="23" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="24" size="2" maxlength="2" disabled />
+                            </div>
+
+                            <div>
+                                <input type="text" name="seconds" value="25" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="26" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="27" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="28" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="29" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="30" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="31" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="32" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="33" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="34" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="35" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="36" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="37" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="38" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="39" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="40" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="41" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="42" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="43" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="44" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="45" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="46" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="47" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="48" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="49" size="2" maxlength="2" disabled />
+                            </div>
+
+                            <div>
+                                <input type="text" name="seconds" value="50" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="51" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="52" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="53" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="54" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="55" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="56" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="57" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="58" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="59" size="2" maxlength="2" disabled />
+                            </div>
+                            <div>
+                                <input type="text" name="seconds" value="60" size="2" maxlength="2" disabled />
+                            </div>
+
+
+
+                        </div>
+                        <div id="selectSec">|</div> <br/>
+
+
+
+
+                        <input type="button" class="saveBtn" id="btnct" value="حفظ" />
+                    </form>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.rtlcss.com/bootstrap/v4.2.1/js/bootstrap.min.js" integrity="sha384-a9xOd0rz8w0J8zqj1qJic7GPFfyMfoiuDjC9rqXlVOcGO/dmRqzMn34gZYDTel8k" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="public/js/jquery.switcher.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
+
+    <script type="text/javascript" src="public/slick-1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('.sliderHours').slick({
+                centerMode: true,
+                arrows: false,
+                centerPadding: '60px',
+                slidesToShow: 3,
+                responsive: [{
+                    breakpoint: 1200,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                }, {
+                    breakpoint: 1200,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }]
+            });
+
+
+
+
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('.sliderMins').slick({
+                centerMode: true,
+                arrows: false,
+                centerPadding: '60px',
+                slidesToShow: 3,
+                responsive: [{
+                    breakpoint: 1200,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                }, {
+                    breakpoint: 1200,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }]
+            });
+
+
+
+
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('.sliderSec').slick({
+                centerMode: true,
+                arrows: false,
+                centerPadding: '60px',
+                slidesToShow: 3,
+                responsive: [{
+                    breakpoint: 1200,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                }, {
+                    breakpoint: 1200,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }]
+            });
+
+
+
+
+
+        });
+    </script>
+
+
+
+    <script>
+        $(function() {
+            $.switcher();
+        });
+
+        $('#inlineCheckbox1').change(function() {
+
+            if ($(this).is(':checked')) {
+
+
+                $('#site-logo').attr('src', 'public/image/sdark.png');
+                $('html').get(0).style.setProperty('--main-color', '#242448');
+                $('html').get(0).style.setProperty('--main-bg-color', '#171734');
+                $('html').get(0).style.setProperty('--main-color', '#242448');
+                $('html').get(0).style.setProperty('--second-bg-color', '#b3b3b3');
+                $('html').get(0).style.setProperty('--golden-color', '#2289ff');
+                $('html').get(0).style.setProperty('--right-graident-color', '#0d7dff');
+                $('html').get(0).style.setProperty('--left-graident-color', '#33ccff');
+                $('html').get(0).style.setProperty('--main-font-color', '#fff');
+                $('html').get(0).style.setProperty('--second-font-color', '#fff');
+                $('html').get(0).style.setProperty('--third-font-color', '#cecece');
+                $('html').get(0).style.setProperty('--color', '#fff');
+                $('html').get(0).style.setProperty('--inverse-color', '#fff');
+                $('html').get(0).style.setProperty('--box-shadow-color', 'transparent');
+
+
+                var body = document.getElementsByTagName("BODY")[0];
+                var timespan = document.getElementById("timespan");
+                var stopwatchBox = document.getElementById("stopwatchBox");
+                var myResults = document.getElementById("myResults");
+                var myLang = document.getElementById("myLang");
+                var myMood = document.getElementById("myMood");
+                var myTimer = document.getElementById("myTimer");
+                var myStop = document.getElementById("myStop");
+                var resText = document.getElementById("resText");
+                var logoText = document.getElementById("logoText");
+                var second = document.getElementById("second");
+                var minute = document.getElementById("minute");
+                var hour = document.getElementById("hour");
+                var lap = document.getElementById("lap");
+                var repeat = document.getElementById("repeat");
+                var btnct = document.getElementById("btnct");
+                var frm = document.getElementById("frm");
+                var hrsInput = document.getElementById('sliderHours').getElementsByTagName('input');
+                var selectHrs = document.getElementById('selectHrs');
+                var minsInput = document.getElementById('sliderMins').getElementsByTagName('input');
+                var selectMins = document.getElementById('selectMins');
+                var secInput = document.getElementById('sliderSec').getElementsByTagName('input');
+                var selectSec = document.getElementById('selectSec');
+
+
+
+
+                body.style.backgroundColor = "rgb(30, 52, 82)";
+                timespan.style.color = "white";
+                stopwatchBox.style.backgroundColor = "rgb(32, 61, 90)";
+                myResults.style.backgroundColor = "rgb(36, 75, 102)";
+                myLang.style.color = "rgb(188, 202, 212)";
+                myLang.style.backgroundColor = "rgb(36, 75, 102)";
+                myMood.style.color = "rgb(188, 202, 212)";
+                myMood.style.backgroundColor = "rgb(36, 75, 102)";
+                myTimer.style.backgroundColor = "rgb(36, 75, 102)";
+                myStop.style.backgroundColor = "rgb(36, 75, 102)";
+                resText.style.backgroundColor = "rgb(36, 75, 102)";
+                logoText.style.color = "rgb(248, 248, 249)";
+                second.style.color = "rgb(171, 196, 81)";
+                minute.style.color = "rgb(171, 196, 81)";
+                hour.style.color = "rgb(171, 196, 81)";
+                lap.style.backgroundColor = "rgb(171, 196, 81)";
+                lap.style.color = "rgb(216, 234, 239)";
+                repeat.style.color = "rgb(171, 196, 81)";
+                btnct.style.backgroundColor = "rgb(53, 110, 127)";
+                btnct.style.color = "rgb(185, 199, 207)";
+                frm.style.color = "rgb(171, 196, 81)";
+                for (var i = 0, len = hrsInput.length; i < len; i++) {
+                    hrsInput[i].style.color = "white";
+                };
+                selectHrs.style.color = "rgb(171, 196, 81)";
+
+                for (var i = 0, len = minsInput.length; i < len; i++) {
+                    minsInput[i].style.color = "white";
+                };
+                selectMins.style.color = "rgb(171, 196, 81)";
+
+                for (var i = 0, len = secInput.length; i < len; i++) {
+                    secInput[i].style.color = "white";
+                };
+                selectSec.style.color = "rgb(171, 196, 81)";
+
+
+
+
+
+
+
+
+                $.ajax({
+                    method: "get",
+                    url: "/update_mode",
+                    data: {
+                        mode: 'night'
+                    }
+                }).done(function(msg) {});
+            } else {
+
+                $('#site-logo').attr('src', 'public/image/swhite.png');
+                $('html').get(0).style.setProperty('--main-color', '#242448');
+                $('html').get(0).style.setProperty('--main-bg-color', '#f5f7fb');
+                $('html').get(0).style.setProperty('--main-color', '#fff');
+                $('html').get(0).style.setProperty('--second-bg-color', '#b3b3b3');
+                $('html').get(0).style.setProperty('--golden-color', '#2289ff');
+                $('html').get(0).style.setProperty('--right-graident-color', '#0d7dff');
+                $('html').get(0).style.setProperty('--left-graident-color', '#33ccff');
+                $('html').get(0).style.setProperty('--main-font-color', '#4d4d4d');
+                $('html').get(0).style.setProperty('--second-font-color', '#8e8e8f');
+                $('html').get(0).style.setProperty('--third-font-color', '#cecece');
+                $('html').get(0).style.setProperty('--color', '#fff');
+                $('html').get(0).style.setProperty('--inverse-color', 'var(--second-font-color)');
+                $('html').get(0).style.setProperty('--box-shadow-color', '#bec5d2');
+
+                var body = document.getElementsByTagName("BODY")[0];
+                var timespan = document.getElementById("timespan");
+                var stopwatchBox = document.getElementById("stopwatchBox");
+                var myResults = document.getElementById("myResults");
+                var myLang = document.getElementById("myLang");
+                var myMood = document.getElementById("myMood");
+                var myTimer = document.getElementById("myTimer");
+                var myStop = document.getElementById("myStop");
+                var resText = document.getElementById("resText");
+                var logoText = document.getElementById("logoText");
+                var second = document.getElementById("second");
+                var minute = document.getElementById("minute");
+                var hour = document.getElementById("hour");
+                var lap = document.getElementById("lap");
+                var repeat = document.getElementById("repeat");
+                var btnct = document.getElementById("btnct");
+                var frm = document.getElementById("frm");
+                var hrsInput = document.getElementById('sliderHours').getElementsByTagName('input');
+                var selectHrs = document.getElementById('selectHrs');
+                var minsInput = document.getElementById('sliderMins').getElementsByTagName('input');
+                var selectMins = document.getElementById('selectMins');
+                var secInput = document.getElementById('sliderSec').getElementsByTagName('input');
+                var selectSec = document.getElementById('selectSec');
+
+
+
+
+
+
+
+                body.style.backgroundColor = "rgb(255, 255, 255)"
+                timespan.style.color = "rgb(226, 71, 75)";
+                stopwatchBox.style.backgroundColor = "rgb(247, 252, 255)";
+                myResults.style.backgroundColor = "rgb(247, 252, 255)";
+                myLang.style.color = "rgb(237, 122, 125)";
+                myLang.style.backgroundColor = "rgb(252, 252, 252)";
+                myMood.style.color = "rgb(237, 122, 125)";
+                myMood.style.backgroundColor = "rgb(252, 252, 252)";
+                myTimer.style.backgroundColor = "rgb(253, 250, 250)";
+                myStop.style.backgroundColor = "rgb(253, 250, 250)";
+                resText.style.backgroundColor = "rgb(247, 252, 255)";
+                logoText.style.color = "rgb(237, 122, 125)";
+                second.style.color = "rgb(130, 178, 207)";
+                minute.style.color = "rgb(130, 178, 207)";
+                hour.style.color = "rgb(130, 178, 207)";
+                lap.style.backgroundColor = "rgb(130, 178, 207)";
+                lap.style.color = "rgb(216, 234, 239)";
+                repeat.style.color = "rgb(130, 178, 207)";
+                btnct.style.backgroundColor = "rgb(198, 17, 21)";
+                btnct.style.color = "white";
+                frm.style.color = "rgb(237, 122, 125)";
+                for (var i = 0, len = hrsInput.length; i < len; i++) {
+                    hrsInput[i].style.color = "rgb(237, 122, 125)";
+                };
+                selectHrs.style.color = "red";
+
+                for (var i = 0, len = minsInput.length; i < len; i++) {
+                    minsInput[i].style.color = "rgb(237, 122, 125)";
+                };
+                selectMins.style.color = "red";
+
+                for (var i = 0, len = secInput.length; i < len; i++) {
+                    secInput[i].style.color = "rgb(237, 122, 125)";
+                };
+                selectSec.style.color = "red";
+
+
+
+
+
+                $.ajax({
+                    method: "get",
+                    url: "/update_mode",
+                    data: {
+                        mode: 'day'
+                    }
+                }).done(function(msg) {});
+            }
+        });
+    </script>
+
+    <script>
+        var seconds, mins, hours;
+        $(document).ready(function() {
+            $('#btnct').click(function() {
+                $('.sliderHours .slick-current input').attr('id', 'hours');
+                $('.sliderMins .slick-current input').attr('id', 'mins');
+                $('.sliderSec .slick-current input').attr('id', 'seconds');
+
+                seconds = $('#seconds').val();
+                mins = $('#mins').val();
+                hours = $('#hours').val();
+
+                $('.sliderHours .slick-active input').removeAttr('id');
+                $('.sliderMins .slick-active input').removeAttr('id');
+                $('.sliderSec .slick-active input').removeAttr('id');
+
+                cdreset();
+            });
+        });
+        var t, count;
+
+        function cddisplay() {
+
+            if (parseInt(hours) == 0 && parseInt(mins) == 0 && parseInt(seconds) == 0) {
+                document.getElementById('timespan').innerHTML = "00" + ":" + "00" + ":" + "00";
+            } else if (isNaN(count)) {
+                document.getElementById('timespan').innerHTML = "00" + ":" + "00" + ":" + "00";
+            } else {
+                document.getElementById('timespan').innerHTML = hours + ":" + mins + ":" + seconds;
+            }
+
+        }
+
+        function countdown() {
+            // starts countdown
+            cddisplay();
+            if (count == 0) {
+                document.getElementById('timespan').innerHTML = "00" + ":" + "00" + ":" + "00";
+            } else if (isNaN(count)) {
+                document.getElementById('timespan').innerHTML = "00" + ":" + "00" + ":" + "00";
+            } else {
+
+                count--;
+
+                let hoursVal = Math.floor(count / 3600);
+                mintCount = count % 3600;
+                // console.log(hoursVal);
+                // console.log(count);
+                let minutesVal = Math.floor(mintCount / 60);
+                let secondsVal = count % 60;
+
+
+                minutesVal = String(minutesVal).padStart(2, "0");
+                hoursVal = String(hoursVal).padStart(2, "0");
+                secondsVal = String(secondsVal).padStart(2, "0");
+                //    console.log(hoursVal + ":" + minutesVal + ":" + secondsVal);
+
+                document.getElementById('timespan').innerHTML = hoursVal + ":" + minutesVal + ":" + secondsVal;
+
+                t = setTimeout(countdown, 1000);
+            }
+        }
+
+        function cdpause() {
+            // pauses countdown
+            clearTimeout(t);
+        }
+
+
+        function cdreset() {
+            // resets countdown
+            cdpause();
+
+            if (parseInt(hours) == 0 && parseInt(mins) == 0 && parseInt(seconds) == 0) {
+                count = 0;
+            } else {
+                count = ((parseInt(hours) * 3600) + (parseInt(mins) * 60) + parseInt(seconds));
+
+            }
+
+            cddisplay();
+        }
+    </script>
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>

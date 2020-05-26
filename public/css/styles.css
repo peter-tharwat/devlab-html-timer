@@ -1,0 +1,707 @@
+         html {
+             --main-bg-color: #f5f7fb;
+             --main-color: #fff;
+             --second-bg-color: #b3b3b3;
+             --golden-color: #2289ff;
+             --right-graident-color: #0d7dff;
+             --left-graident-color: #33ccff;
+             --main-font-color: #4d4d4d;
+             --second-font-color: #8e8e8f;
+             --third-font-color: #cecece;
+             --color: #fff;
+             --inverse-color: var(--second-font-color);
+             --box-shadow-color: #bec5d2;
+         }
+         
+         * {
+             font-weight: bolder;
+         }
+         
+         body {
+             background-color: rgb(255, 255, 255);
+             direction: rtl;
+         }
+         
+         a {
+             cursor: pointer;
+         }
+         
+         .lang {
+             padding: 4% 15%;
+             border-radius: 10px;
+             color: rgb(237, 122, 125);
+             background-color: rgb(252, 252, 252);
+         }
+         
+         .mood {
+             padding: 0.5% 2%;
+             border-radius: 10px;
+             color: rgb(237, 122, 125);
+             background-color: rgb(252, 252, 252);
+         }
+         
+         .timer,
+         .stop {
+             font-size: 11px;
+             font-weight: bolder;
+             text-align: center;
+             line-height: 30px;
+             border-radius: 10px;
+             padding: 1%;
+             background-color: rgb(253, 250, 250);
+             width: 7%;
+         }
+         
+         .timer {
+             margin-left: 3%;
+         }
+         
+         .stop p,
+         .timer p {
+             font-size: 10px;
+             font-weight: bolder;
+         }
+         
+         .moodLang {
+             text-align: left;
+             display: inline-block;
+             color: rgb(237, 122, 125);
+             margin-right: 5%;
+         }
+         
+         .logoText {
+             padding: 5px;
+             position: relative;
+             z-index: 1;
+             color: rgb(248, 102, 112);
+             margin-bottom: 5%;
+         }
+         
+         .resText {
+             color: rgb(185, 202, 213);
+             border-top-left-radius: 10px;
+             border-top-right-radius: 10px;
+             text-align: center;
+             margin-top: -4%;
+             margin-right: 44%;
+             background-color: rgb(247, 252, 255);
+             width: 100px;
+         }
+         
+         .stopwatch {
+             font-size: 8vw;
+             font-weight: bolder;
+             text-align: center;
+             color: rgb(226, 71, 75);
+         }
+         
+         .stopwatch span {
+             font-size: 30px;
+             margin-left: 2%;
+         }
+         
+         #stopwatchBox {
+             margin-bottom: 10%;
+             background-color: rgb(247, 252, 255);
+             border-radius: 25px;
+             padding: 5% 0;
+         }
+         
+         .ui-switcher[aria-checked=true] {
+             background-color: rgb(187, 206, 62);
+         }
+         
+         .ui-switcher[aria-checked=true]:before {
+             content: '';
+             background: none;
+         }
+         
+         .tools {
+             text-align: center;
+         }
+         
+         .tools a {
+             padding: 0 10%;
+             color: rgb(152, 186, 206);
+         }
+         
+         .time span {
+             padding: 0 12%;
+             color: rgb(130, 178, 207);
+             font-size: 20px;
+             font-weight: bolder;
+         }
+         
+         .results {
+             border-color: lime;
+             background-color: rgb(247, 252, 255);
+             height: 365px;
+             border-radius: 25px;
+             overflow: auto;
+             width: 90%;
+             margin-right: 10%;
+         }
+         
+         .results li {
+             font-size: 20px;
+             margin: 10% 0;
+         }
+         
+         .results li div {
+             font-size: 20px;
+         }
+         
+         @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+         li:nth-child(even) span {
+             color: rgb(130, 178, 207);
+             ;
+         }
+         
+         li:nth-child(odd) span {
+             color: rgb(238, 104, 135);
+         }
+         
+         ol {
+             list-style-type: none;
+             margin-left: 0;
+             counter-reset: my-awesome-counter;
+         }
+         
+         ol>li {
+             counter-increment: my-awesome-counter;
+         }
+         
+         ol>li:before {
+             content: "0" counter(my-awesome-counter);
+             font-weight: bold;
+             width: 3em;
+         }
+         
+         ol>li:nth-child(odd):before {
+             color: rgb(238, 104, 135);
+             background-color: rgb(233, 232, 232);
+             padding: 1% 2.5% 0% 1.75%;
+             border-radius: 7px;
+         }
+         
+         ol>li:nth-child(even):before {
+             color: rgb(212, 232, 238);
+             background-color: rgb(168, 208, 220);
+             padding: 1% 2.5% 0% 1.75%;
+             border-radius: 7px;
+         }
+         
+         ol:first-child {
+             counter-reset: customlistcounter;
+         }
+         
+         .csv {
+             float: right;
+             margin-top: 2%;
+             background-color: rgb(237, 251, 255);
+             color: rgb(238, 104, 135);
+             border: none;
+             border-radius: 5px;
+             padding: 5px;
+             margin-right: 15%;
+         }
+         /* width */
+         
+          ::-webkit-scrollbar {
+             width: 2.5px;
+         }
+         /* Track */
+         
+          ::-webkit-scrollbar-track {
+             box-shadow: inset 0 0 5px grey;
+             border-radius: 10px;
+         }
+         /* Handle */
+         
+          ::-webkit-scrollbar-thumb {
+             background: rgb(240, 242, 243);
+             border-radius: 10px;
+         }
+         /* Handle on hover */
+         
+          ::-webkit-scrollbar-thumb:hover {
+             background: rgb(240, 242, 243);
+         }
+         /*media query*/
+         /*********************************************************/
+         /*timer*/
+         
+         .dot {
+             display: none;
+             height: 200px;
+             width: 200px;
+             background-color: rgb(245, 245, 247);
+             border-radius: 50%;
+             position: absolute;
+             top: -6%;
+             right: 38%;
+         }
+         
+         .timecount span {
+             padding: 0 8%;
+             color: rgb(130, 178, 207);
+             font-size: 20px;
+         }
+         
+         * {
+             box-sizing: border-box;
+         }
+         
+         .sliderHours {
+             width: 75%;
+             margin: 100px auto;
+             direction: ltr!important;
+         }
+         
+         .sliderMins {
+             width: 75%;
+             margin: 100px auto;
+             direction: ltr!important;
+         }
+         
+         .sliderSec {
+             width: 75%;
+             margin: 100px auto;
+             direction: ltr!important;
+         }
+         
+         .slick-slide {
+             margin: 0px 20px;
+         }
+         
+         .slick-slide div {
+             width: 100%;
+         }
+         
+         .slick-prev:before,
+         .slick-next:before {
+             color: black;
+         }
+         
+         .slick-slide {
+             transition: all ease-in-out .3s;
+             opacity: .2;
+         }
+         
+         .slick-active {
+             opacity: .5;
+         }
+         
+         .slick-current {
+             opacity: 1;
+         }
+         
+         .sliderHours div input {
+             background-color: transparent;
+             border: none;
+             width: 20px;
+         }
+         
+         .sliderHours div input[type=text] {
+             color: rgb(237, 122, 125);
+         }
+         
+         #selectHrs {
+             color: red;
+             width: 10px;
+             margin-right: 46.75%;
+             margin-top: -33%;
+             height: 10px;
+         }
+         
+         .sliderMins div input {
+             background-color: transparent;
+             border: none;
+             width: 20px;
+         }
+         
+         .sliderMins div input[type=text] {
+             color: rgb(237, 122, 125);
+         }
+         
+         #selectMins {
+             color: red;
+             width: 10px;
+             margin-right: 46.75%;
+             margin-top: -33%;
+             height: 10px;
+         }
+         
+         .sliderSec div input {
+             background-color: transparent;
+             border: none;
+             width: 20px;
+         }
+         
+         .sliderSec div input[type=text] {
+             color: rgb(237, 122, 125);
+         }
+         
+         #selectSec {
+             color: red;
+             width: 10px;
+             margin-right: 46.75%;
+             margin-top: -33%;
+             height: 10px;
+         }
+         
+         .saveBtn {
+             margin-left: 35%;
+             margin-top: 2%;
+             background-color: rgb(198, 17, 21);
+             color: white;
+             border: none;
+             border-radius: 5px;
+             padding: 5px;
+         }
+         
+         .resultsTimer {
+             border-color: lime;
+             background-color: rgb(247, 252, 255);
+             height: 375px;
+             border-radius: 25px;
+             text-align: center;
+             margin-top: 4%;
+         }
+         /*media*/
+         /* Extra small devices (phones, 600px and down) */
+         
+         @media only screen and (max-width: 360px) {
+             .results li {
+                 font-size: 15px;
+             }
+             .results li div {
+                 font-size: 12px;
+             }
+         }
+         
+         @media only screen and (max-width: 575px) {
+             .stopwatch {
+                 font-size: 13vw;
+             }
+             .stopwatch span {
+                 font-size: 15px;
+             }
+             .timer {
+                 margin: 0px;
+             }
+             .moodLang {
+                 margin: 0px;
+             }
+             .time {
+                 text-align: center;
+                 margin-right: 0;
+             }
+             .stopwatch span {
+                 font-size: 12px;
+             }
+             .time span {
+                 padding: 0 5%;
+                 font-size: 20px;
+             }
+             .results {
+                 width: 100%;
+                 margin: 0px;
+             }
+             .resText {
+                 margin-top: -4%;
+                 margin-right: 31%;
+             }
+             .timecount span {
+                 padding: 0 1%;
+             }
+             .sliderHours,
+             .sliderMins,
+             .sliderSec {
+                 margin-bottom: 30%;
+             }
+             #selectSec,
+             #selectMins,
+             #selectHrs {
+                 margin-right: 48.25%;
+                 margin-top: -34%;
+             }
+             .resText {
+                 margin-right: 35%
+             }
+             .results li div {
+                 font-size: 12px;
+             }
+         }
+         
+         @media only screen and (max-width: 767px) and (min-width: 500px) {
+             .stopwatch {
+                 font-size: 10vw;
+             }
+             .sliderHours,
+             .sliderMins,
+             .sliderSec {
+                 margin-bottom: 30%;
+             }
+             #selectSec,
+             #selectMins,
+             #selectHrs {
+                 margin-right: 49.25%;
+             }
+         }
+         
+         @media only screen and (max-width: 990px) and (min-width: 768px) {
+             .stopwatch {
+                 font-size: 8vw;
+             }
+             .time span {
+                 padding: 0 10%;
+             }
+             .results li {
+                 font-size: 12px;
+             }
+             .results li div {
+                 font-size: 12px;
+             }
+         }
+         
+         @media only screen and (max-width: 1199px) and (min-width: 990px) {
+             #selectHrs {
+                 margin-right: 49%;
+                 margin-top: -40%;
+             }
+             .stopwatch {
+                 font-size: 6vw;
+             }
+             .time {
+                 text-align: right;
+                 margin-right: 23%;
+             }
+             .time span {
+                 font-size: 15px;
+                 padding: 0 7%;
+             }
+             .results li {
+                 font-size: 12px;
+             }
+             .resText {
+                 margin-right: 37%;
+             }
+             .results li div {
+                 font-size: 12px;
+             }
+         }
+         
+         @media only screen and (min-width: 1024px) {
+             .dot {
+                 display: block;
+             }
+         }
+         
+         .font-small {
+             font-size: 11px!important;
+         }
+         
+         .font-1 {
+             font-size: 14px !important;
+         }
+         
+         .font-2 {
+             font-size: 17px !important;
+         }
+         
+         .font-3 {
+             font-size: 21px !important;
+         }
+         
+         .font-4 {
+             font-size: 25px !important;
+         }
+         
+         .font-5 {
+             font-size: 30px !important;
+         }
+         
+         .font-6 {
+             font-size: 35px !important;
+         }
+         
+         .font-7 {
+             font-size: 40px !important;
+         }
+         
+         .font-8 {
+             font-size: 45px !important;
+         }
+         
+         .font-9 {
+             font-size: 50px !important;
+         }
+         
+         .font-10 {
+             font-size: 60px !important;
+         }
+         
+         .font-11 {
+             font-size: 70px !important;
+         }
+         
+         .font-12 {
+             font-size: 80px !important;
+         }
+         
+         @media (min-width: 544px) {
+             .font-sm-1 {
+                 font-size: 14px !important;
+             }
+             .font-sm-2 {
+                 font-size: 17px !important;
+             }
+             .font-sm-3 {
+                 font-size: 21px !important;
+             }
+             .font-sm-4 {
+                 font-size: 25px !important;
+             }
+             .font-sm-5 {
+                 font-size: 30px !important;
+             }
+             .font-sm-6 {
+                 font-size: 35px !important;
+             }
+             .font-sm-7 {
+                 font-size: 40px !important;
+             }
+             .font-sm-8 {
+                 font-size: 45px !important;
+             }
+             .font-sm-9 {
+                 font-size: 50px !important;
+             }
+             .font-sm-10 {
+                 font-size: 60px !important;
+             }
+             .font-sm-11 {
+                 font-size: 70px !important;
+             }
+             .font-sm-12 {
+                 font-size: 80px !important;
+             }
+         }
+         
+         @media (min-width: 768px) {
+             .font-md-1 {
+                 font-size: 14px !important;
+             }
+             .font-md-2 {
+                 font-size: 17px !important;
+             }
+             .font-md-3 {
+                 font-size: 21px !important;
+             }
+             .font-md-4 {
+                 font-size: 25px !important;
+             }
+             .font-md-5 {
+                 font-size: 30px !important;
+             }
+             .font-md-6 {
+                 font-size: 35px !important;
+             }
+             .font-md-7 {
+                 font-size: 40px !important;
+             }
+             .font-md-8 {
+                 font-size: 45px !important;
+             }
+             .font-md-9 {
+                 font-size: 50px !important;
+             }
+             .font-md-10 {
+                 font-size: 60px !important;
+             }
+             .font-md-11 {
+                 font-size: 70px !important;
+             }
+             .font-md-12 {
+                 font-size: 80px !important;
+             }
+         }
+         
+         @media (min-width: 992px) {
+             .font-lg-1 {
+                 font-size: 14px !important;
+             }
+             .font-lg-2 {
+                 font-size: 17px !important;
+             }
+             .font-lg-3 {
+                 font-size: 21px !important;
+             }
+             .font-lg-4 {
+                 font-size: 25px !important;
+             }
+             .font-lg-5 {
+                 font-size: 30px !important;
+             }
+             .font-lg-6 {
+                 font-size: 35px !important;
+             }
+             .font-lg-7 {
+                 font-size: 40px !important;
+             }
+             .font-lg-8 {
+                 font-size: 45px !important;
+             }
+             .font-lg-9 {
+                 font-size: 50px !important;
+             }
+             .font-lg-10 {
+                 font-size: 60px !important;
+             }
+             .font-lg-11 {
+                 font-size: 70px !important;
+             }
+             .font-lg-12 {
+                 font-size: 80px !important;
+             }
+         }
+         
+         @media (min-width: 992px) {
+             .font-xl-1 {
+                 font-size: 14px !important;
+             }
+             .font-xl-2 {
+                 font-size: 17px !important;
+             }
+             .font-xl-3 {
+                 font-size: 21px !important;
+             }
+             .font-xl-4 {
+                 font-size: 25px !important;
+             }
+             .font-xl-5 {
+                 font-size: 30px !important;
+             }
+             .font-xl-6 {
+                 font-size: 35px !important;
+             }
+             .font-xl-7 {
+                 font-size: 40px !important;
+             }
+             .font-xl-8 {
+                 font-size: 45px !important;
+             }
+             .font-xl-9 {
+                 font-size: 50px !important;
+             }
+             .font-xl-10 {
+                 font-size: 60px !important;
+             }
+             .font-xl-11 {
+                 font-size: 70px !important;
+             }
+             .font-xl-12 {
+                 font-size: 80px !important;
+             }
+         }
